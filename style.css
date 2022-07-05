@@ -16,8 +16,12 @@
 }
 
 body {
-  background: url(/images/top-image.svg) top url(/images/bottom-image.svg) bottom no-repeat  ;
-
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/images/top-image.svg) , url(/images/bottom-image.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom left;
+  overflow-x: hidden;
 }
 
 main {
@@ -44,22 +48,50 @@ main {
   color: var(--purple);
 }
 
-.col-a .clock .time {
+.col-a #js-clock {
   display: flex;
-  gap: 9.1rem;
+  margin-top: 4.6rem;
+  
+  justify-content: center;
+}
 
-  margin-top: 1.9rem;
+.col-a .box-me {
+  justify-content: center;
+}
 
-  font-weight: 300;
+.col-a .clock-label{
+  font-weight: 400;
   font-size: 1.4rem;
   line-height: 2.1rem;
 
-  text-transform: capitalize;
-
-  color: var(--light-grey);
+  color: var(--text-color);
 }
 
-#countDown {
+.col-a #js-clock-days {
+  font-weight: 400;
+  font-size: 7.2rem;
+  line-height: 10.8rem;
+
+  color: var(--black);
+}
+
+.col-a #js-clock-hours {
+  font-weight: 400;
+  font-size: 7.2rem;
+  line-height: 10.8rem;
+
+  color: var(--black);
+}
+
+.col-a #js-clock-minutes {
+  font-weight: 400;
+  font-size: 7.2rem;
+  line-height: 10.8rem;
+
+  color: var(--black);
+}
+
+.col-a #js-clock-seconds {
   font-weight: 400;
   font-size: 7.2rem;
   line-height: 10.8rem;
@@ -69,15 +101,13 @@ main {
 
 .col-a p {
   margin-top: 4.6rem;
+
   font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
 
   color: var(--text-color);
-
-  justify-content: center;
 }
-
 .col-a button {
   margin-top: 3.1rem;
 
