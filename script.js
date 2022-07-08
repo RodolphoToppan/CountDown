@@ -16,7 +16,5 @@ setInterval(function time() {
   let seconds =
     Math.floor((distance / 1000) % 60) < 10 ? '0' + this.seconds : this.seconds
 
-  return document
-    .getElementById('data-time')
-    .innerText(days, hours, minutes, seconds)
+  return days, hours, minutes, seconds
 }, 1000)
