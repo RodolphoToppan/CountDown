@@ -48,18 +48,16 @@ main {
   color: var(--purple);
 }
 
-.col-a #js-clock {
+.col-a #clock {
   display: flex;
   margin-top: 4.6rem;
   
   justify-content: center;
 }
 
-.col-a .box-me {
-  justify-content: center;
-}
 
 .col-a .clock-label{
+  justify-content: center;
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 2.1rem;
@@ -67,7 +65,7 @@ main {
   color: var(--text-color);
 }
 
-.col-a #js-clock-days {
+.col-a #data-time {
   font-weight: 400;
   font-size: 7.2rem;
   line-height: 10.8rem;
@@ -75,7 +73,7 @@ main {
   color: var(--black);
 }
 
-.col-a #js-clock-hours {
+.col-a #data-time {
   font-weight: 400;
   font-size: 7.2rem;
   line-height: 10.8rem;
@@ -83,7 +81,7 @@ main {
   color: var(--black);
 }
 
-.col-a #js-clock-minutes {
+.col-a #data-time {
   font-weight: 400;
   font-size: 7.2rem;
   line-height: 10.8rem;
@@ -91,7 +89,7 @@ main {
   color: var(--black);
 }
 
-.col-a #js-clock-seconds {
+.col-a #data-time {
   font-weight: 400;
   font-size: 7.2rem;
   line-height: 10.8rem;
