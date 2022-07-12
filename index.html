@@ -15,40 +15,68 @@
   </head>
   <body>
     <main>
-      <div class="col-a">
-        <h1>Ready to launch in...</h1>
+      <div class="container">
+        <div class="col-a">
+          <h1>Ready to launch in...</h1>
 
-        <div id="clock">
-          <div class="time">
-            <div class="clock-label">Dias</div>
-            <div id="data-time"></div>
+          <div id="clock">
+            <div class="time">
+              <div class="clock-label">Dias</div>
+              <div id="data-time">00</div>
+            </div>
+
+            <div class="time">
+              <div class="clock-label">Horas</div>
+              <div id="data-time">00</div>
+            </div>
+
+            <div class="time">
+              <div class="clock-label">Minutos</div>
+              <div id="data-time">00</div>
+            </div>
+
+            <div class="time">
+              <div class="clock-label">Segundos</div>
+              <div id="data-time">00</div>
+            </div>
           </div>
 
-          <div class="time">
-            <div class="clock-label">Horas</div>
-            <div id="data-time"></div>
-          </div>
+          <p>Inscreva-se para saber mais sobre o lançamento</p>
+          <button class="subscribe">Inscreva-se</button>
 
-          <div class="time">
-            <div class="clock-label">Minutos</div>
-            <div id="data-time"></div>
-          </div>
+          <div class="modalwrapper">
+            <div class="modal">
+              <h2>Inscreva-se</h2>
+              <p>Insira seus dados para concluir sua inscrição</p>
+              <form action="#">
+                <label class="sr-only" for-id="e-mail"
+                  >Digite seu nome completo</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Digite seu nome completo"
+                />
 
-          <div class="time">
-            <div class="clock-label">Segundos</div>
-            <div id="data-time"></div>
+                <label class="sr-only" for-id="e-mail">Digite seu e-mail</label>
+                <input
+                  type="text"
+                  id="e-mail"
+                  name="e-mail"
+                  placeholder="Digite seu e-mail"
+                />
+              </form>
+              <button class="send">Enviar</button>
+            </div>
           </div>
         </div>
 
-        <p>Inscreva-se para saber mais sobre o lançamento</p>
-        <button>Inscreva-se</button>
-      </div>
-
-      <div class="col-b">
-        <img src="./images/rocket.svg" alt="Rocket" />
+        <div class="col-b">
+          <img src="./images/rocket.svg" alt="Rocket" />
+        </div>
       </div>
     </main>
-    
     <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>

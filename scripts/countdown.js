@@ -1,32 +1,27 @@
+let futureDate = new Date('30 July 2022')
+
 export default function Countdown() {
-  const dataTime = document.querySelectorAll('data-time')
-  let actualDate = new Date(),
-    futureDate = new Date('21 December 2022'),
-    distance = futureDate.getTime() - actualDate.getTime()
-
   setInterval(function time() {
-    let days =
-      Math.floor(distance / (24 * 60 * 60 * 1000)) < 10 ? '0' + days : this.days
-    let hours =
-      Math.floor((distance / (60 * 60 * 1000)) % 24) < 10
-        ? '0' + this.hours
-        : this.hours
-    let minutes =
-      Math.floor((distance / (60 * 1000)) % 60) < 10
-        ? '0' + this.minutes
-        : this.minutes
-    let seconds =
-      Math.floor((distance / 1000) % 60) < 10
-        ? '0' + this.seconds
-        : this.seconds
+    const actualDate = new Date()
+    const distance = futureDate.getTime() - actualDate.getTime()
+
+    const day = Math.floor(distance / (24 * 60 * 60 * 1000))
+    const hour = Math.floor((distance / (60 * 60 * 1000)) % 24)
+    const minute = Math.floor((distance / (60 * 1000)) % 60)
+    const second = Math.floor((distance / 1000) % 60)
+
+    const days = day < 10 ? '0' + day : day
+    const hours = hour < 10 ? '0' + hour : hour
+    const minutes = minute < 10 ? '0' + minute : minute
+    const seconds = second < 10 ? '0' + second : second
+
+    const substituteValues = [days, hours, minutes, seconds]
+    const timeElements = document.querySelectorAll('div[id="data-time"')
+
+    timeElements.forEach((element, index) => {
+      element.innerHTML =
+        index == 0 ? substituteValues[index] : ' : ' + substituteValues[index]
+    })
   }, 1000)
-
-  Countdown()
-
-  function Display() {
-    let Display = document
-      .getElementById('data-time')
-      .innerHTML(days + ' : ' + hours + ' : ' + minutes + ' : ' + seconds)
-    Display()
-  }
 }
+Countdown()

@@ -18,13 +18,23 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-image: url(/images/top-image.svg) , url(/images/bottom-image.svg);
-  background-repeat: no-repeat, no-repeat;
-  background-position: top left, bottom left;
+  background: url(/images/top-image.svg) top left no-repeat, url(/images/bottom-image.svg) bottom left no-repeat;
   overflow-x: hidden;
 }
 
-main {
+.sr-only{
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: rect(0 0 0 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +59,8 @@ main {
 }
 
 .col-a #clock {
-  display: flex;
+  display: inline-flex;
+  gap: 2rem;
   margin-top: 4.6rem;
   
   justify-content: center;
@@ -118,4 +129,66 @@ main {
   color: white;
 
   cursor: pointer;
+}
+
+.col-a .modalwrapper.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.col-a .modalwrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+
+  background: rgba(4, 9, 17, 0.8);
+
+  visibility: hidden;
+  opacity: 0;
+}
+
+.col-a .modalwrapper .modal {
+  width: min(59rem 90%);
+  background: white; 
+  margin: auto;
+  padding: 2rem;
+
+  border-radius: 0.8rem;
+
+  text-align: center;
+}
+
+.col-a .modalwrapper .modal h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--purple);
+}
+
+.col-a .modalwrapper .modal p {
+  margin-top: 1.2rem;
+  margin-bottom: 2.4rem;
+  color: var(--text-color);
+}
+
+.col-a .modalwrapper .modal input {
+  margin-bottom: 2rem;
+  padding: 1.3rem 1.6rem;
+  border: 0.2rem solid var(--purple);
+  border-radius: 1rem;
+  outline: none;
+  width: min(30.2rem, 70%);
+}
+
+.col-a .modalwrapper .modal button {
+  margin-top: .8rem;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover{
+  filter: brightness(120%);
 }
