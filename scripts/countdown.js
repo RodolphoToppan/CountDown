@@ -1,4 +1,4 @@
-let futureDate = new Date('30 July 2022')
+let futureDate = new Date('22 November 2022')
 
 export default function Countdown() {
   setInterval(function time() {
